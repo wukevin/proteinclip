@@ -1,0 +1,45 @@
+name: proteinclip
+channels:
+  - defaults
+  - anaconda
+  - pytorch
+  - nvidia
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.10
+  - pip
+  - arrow
+  - biotite
+  - cached-property
+  - diskcache=5.6.3
+  - h5py=3.10
+  - hdf5
+  - lightning=2.1
+  - matplotlib
+  - numpy
+  - onnx
+  - onnxruntime
+  - openai
+  - openpyxl
+  - pandas=2.2
+  - bioconda::pronto
+  - pyarrow
+  - pyfaidx
+  - pytorch::pytorch=2.2
+  - pytorch::pytorch-cuda=12.1
+  - scikit-learn
+  - scipy
+  - seaborn
+  - conda-forge::sentencepiece
+  - sortedcontainers
+  - statsmodels
+  - torchmetrics=1.2
+  - transformers
+  - tqdm
+  - umap-learn
+  - pip:
+    - fair-esm
+    - mpl-scatter-density
+    - PyTDC
+    - levenshtein

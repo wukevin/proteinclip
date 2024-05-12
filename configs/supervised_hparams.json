@@ -1,0 +1,5 @@
+{
+    "learning_rate": 2e-4,
+    "batch_size": 4096,
+    "max_epochs": 200
+}
