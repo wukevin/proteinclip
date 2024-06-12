@@ -44,7 +44,7 @@ Pre-trained models are available for the following models
 * ESM2, 6-layer: `model_utils.load_proteinclip("esm", 6)`
 * ProtT5: `model_utils.load_proteinclip("t5")`
 
-These models are stored in the [ONNX format](https://github.com/onnx/onnx) so feel free to write your own loaders as well.
+These models are stored in the [ONNX format](https://github.com/onnx/onnx) so feel free to write your own loaders as well. These models are small and can run their forward inference passes very quickly even on CPU.
 
 ## Example training commands
 
@@ -57,6 +57,8 @@ Example command:
 python bin/train_protein_clip.py configs/clip_hparams.json /path/to/uniprot_sprot.dat.gz /path/to/protein_embedding.hdf5 --unitnorm -g text-embedding-3-large
 ```
 
+Training should only take a couple hours with pre-computed embeddings.
+
 ### Training protein-protein interaction classifier
 
 We provide a training command to automatically train a protein-protein classifier using the data splits provided by Bernett et al. The input to this training call is a directory to a training run of the above ProteinCLIP; the relevant hdf5 embeddings for proteins will be loaded, as well as the CLIP architecture itself (as specified by the `--clipnum` argument). 
@@ -66,5 +68,6 @@ Example command:
 python bin/train_ppi.py configs/supervised_hparams.json -c ./protein_clip/version_0 --clipnum 1 -n ppi_classifier
 ```
 
+Training should take a few minutes.
 ## References
 (1) Bernett, J., Blumenthal, D. B., & List, M. (2024). Cracking the black box of deep sequence-based protein–protein interaction prediction. Briefings in Bioinformatics, 25(2), bbae076.
